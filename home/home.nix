@@ -115,7 +115,7 @@ programs.bash = {
     pr = "protonvpn-cli reconnect";
     zj = "zellij";
     lob = "lobster";
-    flake-up = "sudo nixos flake update --commit-lock-file";
+    flake-up = "nix flake update --commit-lock-file";
     nixos-new = "sudo nixos-rebuild switch --flake /home/jaziel/repos/configs/nixos/";
     home-rebuild = "home-manager switch --flake /home/jaziel/repos/configs/nixos/";
     };
