@@ -25,7 +25,7 @@
   boot.plymouth = {
     enable = true;
      # themePackages = [ nixos-bgrt-plymouth];
-     theme = "bgrt";
+     theme = "glow";
   };
 
   #sops.defaultSopsFile = ./secrets.yaml;
