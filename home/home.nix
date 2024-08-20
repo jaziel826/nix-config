@@ -6,7 +6,7 @@
   home.username = "jaziel";
   home.homeDirectory = "/home/jaziel";
   nixpkgs.config.allowUnfreePredicate = _: true;
- # nixpkgs-unstable.config.allowUnfree = true;
+ nixpkgs-unstable.config.allowUnfree = true;
 
 
   # This value determines the Home Manager release that your configuration is
@@ -128,8 +128,8 @@ function yy() {
 		builtin cd -- "$cwd"
 	fi
 	rm -f -- "$tmp"
-	eval "$(zoxide init bash)"
 }
+  eval "$(zoxide init bash)"
     '';
   };
 
@@ -259,7 +259,8 @@ programs.git = {
   home.sessionPath = [
     "$XDG_BIN_HOME"
 ];
-
+  # reload system units when switch
+  systemd.user.startServices = "sd-switch";
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   home.enableNixpkgsReleaseCheck = false;
