@@ -1,0 +1,11 @@
+keys:
+  - &users:
+    - &jaziel age169mplpr7t3jkw7sazm2a0egdcywhtkprmf4e7036g3rn69g33paswjf6dj
+  - &hosts:
+    - &ThinkPad age10sdk3g52cq88dhmtnmvld4amtmtletvwf8jk46pt2jq804jn43nq63ljq6
+creation_rules:
+  - path_regex: secrets.yaml$
+    key_groups:
+    - age:
+      - *jaziel
+      - *ThinkPad
