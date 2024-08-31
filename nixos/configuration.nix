@@ -22,10 +22,11 @@
   boot.loader.efi.canTouchEfiVariables = true;
   # boot.plymouth.enable = true; 
   #boot.loader.systemd-boot.configurationLimit = 12;
+  boot.initrd.systemd.enable = true;
   boot.plymouth = {
     enable = true;
      # themePackages = [ nixos-bgrt-plymouth];
-     theme = "glow";
+     theme = "bgrt";
   };
 
   #sops.defaultSopsFile = ./secrets.yaml;
