@@ -55,7 +55,7 @@
     homeConfigurations = {
       jaziel = home-manager.lib.homeManagerConfiguration { 
         inherit pkgs;
-        extraSpecialArgs = { inherit overlay-unstable; };
+        #extraSpecialArgs = { inherit overlay-unstable; };
 	modules = [
 	#({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
 	./home/home.nix ];
