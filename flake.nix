@@ -11,14 +11,14 @@
     };
     auto-cpufreq = {
     url = "github:AdnanHodzic/auto-cpufreq";
-    inputs.nixpkgs.follows = "nixpkgs-unstable";
+    inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 #      impermanence.url = "github:nix-community/impermanence";
 
-    # home-manager = {
-    #   url = "github:nix-community/home-manager";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+     home-manager = {
+       url = "github:nix-community/home-manager";
+       inputs.nixpkgs.follows = "nixpkgs";
+     };
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, auto-cpufreq, sops-nix,... }@inputs:

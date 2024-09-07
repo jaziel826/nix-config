@@ -6,7 +6,7 @@
   home.username = "jaziel";
   home.homeDirectory = "/home/jaziel";
   nixpkgs.config.allowUnfreePredicate = _: true;
-  #nixpkgs-unstable.config.allowUnfree = true;
+  nixpkgs-unstable.config.allowUnfree = true;
 
 
   # This value determines the Home Manager release that your configuration is
