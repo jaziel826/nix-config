@@ -64,9 +64,11 @@
   };
 # Enable Flakes 
  # nix.settings.experimental-features = ["nix-command" "flakes"];
-   nix = let
-    flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
-  in {
+   nix =
+  #let
+   # flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
+  #in
+  {
     settings = {
       # Enable flakes and new 'nix' command
       experimental-features = "nix-command flakes";
@@ -79,8 +81,8 @@
     channel.enable = false;
 
     # Opinionated: make flake registry and nix path match flake inputs
-    registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
-    nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
+    #registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
+    #nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
   };
 # set uo auto-cpufreq 
   # ---Snip---

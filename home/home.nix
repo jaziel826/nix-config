@@ -6,7 +6,7 @@
   home.username = "jaziel";
   home.homeDirectory = "/home/jaziel";
   nixpkgs.config.allowUnfreePredicate = _: true;
- nixpkgs-unstable.config.allowUnfree = true;
+  #nixpkgs-unstable.config.allowUnfree = true;
 
 
   # This value determines the Home Manager release that your configuration is
@@ -29,7 +29,7 @@
   #systemd.service.kde-baloo.enable = false;
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs.unstable; [
+  home.packages = with pkgs; [
   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   wget
   jetbrains-mono
@@ -116,8 +116,8 @@ programs.bash = {
     zj = "zellij";
     lob = "lobster";
     flake-up = "nix flake update --commit-lock-file";
-    nixos-new = "sudo nixos-rebuild switch --flake /home/jaziel/repos/configs/nixos/";
-    home-rebuild = "home-manager switch --flake /home/jaziel/repos/configs/nixos/";
+    nixos-new = "sudo nixos-rebuild switch --flake /home/jaziel/repos/nixos/";
+    home-rebuild = "home-manager switch --flake /home/jaziel/repos/nixos/";
     };
     bashrcExtra = ''
       . ~/repos/configs/bash/.bashrc
@@ -129,6 +129,28 @@ function yy() {
 	fi
 	rm -f -- "$tmp"
 }
+notify_on_finish() {
+    local ntfy_url="https://ntfy.digecloud.work/Monitor"  # Replace YOUR_TOPIC with your ntfy.sh topic
+
+    # Capture the exit status of the last command
+    local status=$?
+
+    # Determine the notification title and message based on the exit status
+    if [ $status -eq 0 ]; then
+        local title="Success"
+        local message="Command succeeded: $(history 1 | sed 's/^ *[0-9]* *//')"
+    else
+        local title="Error"
+        local message="Command failed with status $status: $(history 1 | sed 's/^ *[0-9]* *//')"
+    fi
+
+    # Send the notification using ntfy.sh
+    curl -s -X POST "$ntfy_url" -d "{\"title\":\"$title\",\"message\":\"$message\"}"
+
+    # Exit with the same status as the last command
+    return $status
+}
+
   eval "$(zoxide init bash)"
     '';
   };
@@ -183,34 +205,34 @@ programs.git = {
   home.file = {
       vim = {
           recursive = true;
-          source = ../vim/.vim;
+          source = ~/repos/configs/vim/.vim;
           target = "/home/jaziel/.vim";
         };
       vimrc = {
-          source = ../vim/.vimrc;
+          source = ~/repos/configs/vim/.vimrc;
           target = "/home/jaziel/.vimrc";
        };
       tmux = {
-          source = ../tmux/.tmux.conf;
+          source = ~/repos/configs/tmux/.tmux.conf;
           target = "/home/jaziel/.tmux.conf";
         };
       starship = {
-          source = ../starship/.config/starship.toml;
+          source = ~/repos/configs/starship/.config/starship.toml;
           target = "/home/jaziel/.config/starship.toml";
         };
       lf = {
           recursive = true;
-          source = ../lf/.config/lf;
+          source = ~/repos/configs/lf/.config/lf;
           target = "/home/jaziel/.config/lf";
         };
       alacritty = {
           recursive = true;
-          source = ../alacritty/.config/alacritty;
+          source = ~/repos/configs/alacritty/.config/alacritty;
           target = "/home/jaziel/.config/alacritty";
         };
       btop = {
           recursive = true;
-          source = ../btop/.config/btop;
+          source = ~/repos/configs/btop/.config/btop;
           target = "/home/jaziel/.config/btop";
         };
 #      .bashrc = {
