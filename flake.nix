@@ -14,7 +14,6 @@
     inputs.nixpkgs.follows = "nixpkgs";
     };
 #      impermanence.url = "github:nix-community/impermanence";
-
      home-manager = {
        url = "github:nix-community/home-manager";
        inputs.nixpkgs.follows = "nixpkgs";
@@ -49,18 +48,27 @@
             auto-cpufreq.nixosModules.default
             sops-nix.nixosModules.sops
             # inputs.home-manager.nixosModules.default
+            home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.jaziel = import ./home/home.nix;
+
+            # Optionally, use home-manager.extraSpecialArgs to pass
+            # arguments to home.nix
+          }
           ];
         };
     };
-    homeConfigurations = {
-      jaziel = home-manager.lib.homeManagerConfiguration { 
-        inherit pkgs;
+   # homeConfigurations = {
+     # jaziel = home-manager.lib.homeManagerConfiguration {
+       # inherit pkgs;
         #extraSpecialArgs = { inherit overlay-unstable; };
-	modules = [
+	#modules = [
 	#({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
-	./home/home.nix ];
-		};  	
-	};
+	#./home/home.nix ];
+	#	};
+	#};
 };
 
 }
