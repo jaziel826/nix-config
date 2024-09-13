@@ -25,10 +25,13 @@
   boot.initrd.systemd.enable = true;
   boot.plymouth = {
     enable = true;
-     # themePackages = [ nixos-bgrt-plymouth];
-     theme = "bgrt";
+     #themePackages = [ nixos-bgrt-plymouth];
+     theme = "spinner";
   };
-
+  boot.kernelParams = [
+      "quiet"
+      "splash"
+    ];
   #sops.defaultSopsFile = ./secrets.yaml;
   #boot.initrd.luks.devices."luks-515df98e-91e6-4714-bc04-093adad99922".device = "/dev/disk/by-uuid/515df98e-91e6-4714-bc04-093adad99922";
   boot.initrd.luks.devices."luks-164cbc37-fe46-4be4-9059-f6c1b4743e89".device = "/dev/disk/by-uuid/164cbc37-fe46-4be4-9059-f6c1b4743e89";
@@ -206,14 +209,23 @@ services.avahi = {
     isNormalUser = true;
     description = "Jaziel";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
+    #packages = with pkgs; [
      #firefox
 #       kate
 #       alacritty
       
     #  thunderbird
-    ];
+    #];
   };
+  #home-manager.users.jaziel = { pkgs, ... }: {
+  #home.packages = [ pkgs.atool pkgs.httpie ];
+ # programs.bash.enable = true;
+
+  # The state version is required and should stay at the version you
+  # originally installed.
+  #home.stateVersion = "23.11";
+#};
+
 
   # Enable automatic login for the user.
   # services.xserver.displayManager.autoLogin.enable = true;
@@ -285,6 +297,7 @@ services.avahi = {
   stow 
   usbutils
   acpi
+  adi1090x-plymouth-themes
   ];
 
   programs.kdeconnect.enable = true;
