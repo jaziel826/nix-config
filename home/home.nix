@@ -206,34 +206,34 @@ programs.git = {
   home.file = {
       vim = {
           recursive = true;
-          source = "${dotfile}/configs/vim/.vim";
+          source = "${dotfiles}/configs/vim/.vim";
           target = "/home/jaziel/.vim";
         };
       vimrc = {
-          source = "${dotfile}/configs/vim/.vimrc";
+          source = "${dotfiles}/configs/vim/.vimrc";
           target = "/home/jaziel/.vimrc";
        };
       tmux = {
-          source = "${dotfile}/configs/tmux/.tmux.conf";
+          source = "${dotfiles}/configs/tmux/.tmux.conf";
           target = "/home/jaziel/.tmux.conf";
         };
       starship = {
-          source = "${dotfile}/configs/starship/.config/starship.toml";
+          source = "${dotfiles}/configs/starship/.config/starship.toml";
           target = "/home/jaziel/.config/starship.toml";
         };
       lf = {
           recursive = true;
-          source = "${dotfile}/configs/lf/.config/lf";
+          source = "${dotfiles}/configs/lf/.config/lf";
           target = "/home/jaziel/.config/lf";
         };
       alacritty = {
           recursive = true;
-          source = "${dotfile}/configs/alacritty/.config/alacritty";
+          source = "${dotfiles}/configs/alacritty/.config/alacritty";
           target = "/home/jaziel/.config/alacritty";
         };
       btop = {
           recursive = true;
-          source = "${dotfile}/configs/btop/.config/btop";
+          source = "${dotfiles}/configs/btop/.config/btop";
           target = "/home/jaziel/.config/btop";
         };
 #      .bashrc = {
