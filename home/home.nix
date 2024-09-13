@@ -24,7 +24,9 @@
 #      package = pkgs.libsForQt5.breeze-gtk;
 #    };
 #  };
-
+  #environment.variables = {
+ #   dotfiles = config.lib.file.mkOutOfStoreSymlink "/home/jaziel/repos/configs";
+ #   };
 
   #systemd.service.kde-baloo.enable = false;
   # The home.packages option allows you to install Nix packages into your
@@ -116,7 +118,7 @@ programs.bash = {
     zj = "zellij";
     lob = "lobster";
     flake-up = "nix flake update --commit-lock-file";
-    nixos-new = "sudo nixos-rebuild switch --flake /home/jaziel/repos/nixos/ --impure";
+    nixos-new = "sudo nixos-rebuild switch --flake /home/jaziel/repos/nixos/";
     home-rebuild = "home-manager switch --flake /home/jaziel/repos/nixos/";
     };
     bashrcExtra = ''
@@ -202,39 +204,38 @@ programs.git = {
 };
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
-  dotfiles = mkOutOfStoreSymlink /home/jaziel/repos/configs;
   home.file = {
-      vim = {
-          recursive = true;
-          source = "${dotfiles}/configs/vim/.vim";
-          target = "/home/jaziel/.vim";
+      "/home/jaziel/vim" = {
+          #recursive = true;
+          source = config.lib.file.mkOutOfStoreSymlink "/home/jaziel/repos/configs/configs/vim/.vim";
+         # target = "/home/jaziel/.vim";
         };
-      vimrc = {
-          source = "${dotfiles}/configs/vim/.vimrc";
-          target = "/home/jaziel/.vimrc";
+      "/home/jaziel/.vimrc" = {
+          source = config.lib.file.mkOutOfStoreSymlink "/home/jaziel/repos/configs/configs/vim/.vimrc";
+         # target = "/home/jaziel/.vimrc";
        };
-      tmux = {
-          source = "${dotfiles}/configs/tmux/.tmux.conf";
-          target = "/home/jaziel/.tmux.conf";
+      "/home/jaziel/.tmux.conf" = {
+          source = config.lib.file.mkOutOfStoreSymlink "/home/jaziel/repos/configs/configs/tmux/.tmux.conf";
+         # target = "/home/jaziel/.tmux.conf";
         };
-      starship = {
-          source = "${dotfiles}/configs/starship/.config/starship.toml";
-          target = "/home/jaziel/.config/starship.toml";
+      "/home/jaziel/.config/starship.toml" = {
+          source = config.lib.file.mkOutOfStoreSymlink "/home/jaziel/repos/configs/configs/starship/.config/starship.toml";
+         # target = "/home/jaziel/.config/starship.toml";
         };
-      lf = {
-          recursive = true;
-          source = "${dotfiles}/configs/lf/.config/lf";
-          target = "/home/jaziel/.config/lf";
+      "/home/jaziel/.config/lf" = {
+         # recursive = true;
+          source = config.lib.file.mkOutOfStoreSymlink "/home/jaziel/repos/configs/configs/lf/.config/lf";
+         # target = "/home/jaziel/.config/lf";
         };
-      alacritty = {
-          recursive = true;
-          source = "${dotfiles}/configs/alacritty/.config/alacritty";
-          target = "/home/jaziel/.config/alacritty";
+     "/home/jaziel/.config/alacritty" = {
+          #recursive = true;
+          source = config.lib.file.mkOutOfStoreSymlink "/home/jaziel/repos/configs/configs/alacritty/.config/alacritty";
+          #target = "/home/jaziel/.config/alacritty";
         };
-      btop = {
-          recursive = true;
-          source = "${dotfiles}/configs/btop/.config/btop";
-          target = "/home/jaziel/.config/btop";
+      "/home/jaziel/.config/btop" = {
+          #recursive = true;
+          source = config.lib.file.mkOutOfStoreSymlink "/home/jaziel/repos/configs/configs/btop/.config/btop";
+         # target = "/home/jaziel/.config/btop";
         };
 #      .bashrc = {
 #          source = /home/jaziel/repos/repos/configs/bash/.bashrc;
