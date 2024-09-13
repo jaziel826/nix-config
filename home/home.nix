@@ -206,36 +206,36 @@ programs.git = {
   # plain files is through 'home.file'.
   home.file = {
       "/home/jaziel/vim" = {
-          #recursive = true;
-          source = config.lib.file.mkOutOfStoreSymlink "/home/jaziel/repos/configs/configs/vim/.vim";
-         # target = "/home/jaziel/.vim";
+          recursive = true;
+          source = config.lib.file.mkOutOfStoreSymlink "/home/jaziel/repos/configs/vim/.vim";
+          target = "/home/jaziel/.vim";
         };
       "/home/jaziel/.vimrc" = {
-          source = config.lib.file.mkOutOfStoreSymlink "/home/jaziel/repos/configs/configs/vim/.vimrc";
-         # target = "/home/jaziel/.vimrc";
+          source = config.lib.file.mkOutOfStoreSymlink "/home/jaziel/repos/configs/vim/.vimrc";
+          target = "/home/jaziel/.vimrc";
        };
       "/home/jaziel/.tmux.conf" = {
-          source = config.lib.file.mkOutOfStoreSymlink "/home/jaziel/repos/configs/configs/tmux/.tmux.conf";
-         # target = "/home/jaziel/.tmux.conf";
+          source = config.lib.file.mkOutOfStoreSymlink "/home/jaziel/repos/configs/tmux/.tmux.conf";
+          target = "/home/jaziel/.tmux.conf";
         };
       "/home/jaziel/.config/starship.toml" = {
-          source = config.lib.file.mkOutOfStoreSymlink "/home/jaziel/repos/configs/configs/starship/.config/starship.toml";
-         # target = "/home/jaziel/.config/starship.toml";
+          source = config.lib.file.mkOutOfStoreSymlink "/home/jaziel/repos/configs/starship/.config/starship.toml";
+          target = "/home/jaziel/.config/starship.toml";
         };
       "/home/jaziel/.config/lf" = {
-         # recursive = true;
-          source = config.lib.file.mkOutOfStoreSymlink "/home/jaziel/repos/configs/configs/lf/.config/lf";
-         # target = "/home/jaziel/.config/lf";
+          recursive = true;
+          source = config.lib.file.mkOutOfStoreSymlink "/home/jaziel/repos/configs/lf/.config/lf";
+          target = "/home/jaziel/.config/lf";
         };
      "/home/jaziel/.config/alacritty" = {
-          #recursive = true;
-          source = config.lib.file.mkOutOfStoreSymlink "/home/jaziel/repos/configs/configs/alacritty/.config/alacritty";
-          #target = "/home/jaziel/.config/alacritty";
+          recursive = true;
+          source = config.lib.file.mkOutOfStoreSymlink "/home/jaziel/repos/configs/alacritty/.config/alacritty";
+          target = "/home/jaziel/.config/alacritty";
         };
       "/home/jaziel/.config/btop" = {
-          #recursive = true;
-          source = config.lib.file.mkOutOfStoreSymlink "/home/jaziel/repos/configs/configs/btop/.config/btop";
-         # target = "/home/jaziel/.config/btop";
+          recursive = true;
+          source = config.lib.file.mkOutOfStoreSymlink "/home/jaziel/repos/configs/btop/.config/btop";
+          target = "/home/jaziel/.config/btop";
         };
 #      .bashrc = {
 #          source = /home/jaziel/repos/repos/configs/bash/.bashrc;
