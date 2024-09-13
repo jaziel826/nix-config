@@ -116,7 +116,7 @@ programs.bash = {
     zj = "zellij";
     lob = "lobster";
     flake-up = "nix flake update --commit-lock-file";
-    nixos-new = "sudo nixos-rebuild switch --flake /home/jaziel/repos/nixos/";
+    nixos-new = "sudo nixos-rebuild switch --flake /home/jaziel/repos/nixos/ --impure";
     home-rebuild = "home-manager switch --flake /home/jaziel/repos/nixos/";
     };
     bashrcExtra = ''
@@ -202,41 +202,42 @@ programs.git = {
 };
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
+  dotfiles = mkOutOfStoreSymlink /home/jaziel/repos/configs
   home.file = {
       vim = {
           recursive = true;
-          source = ~/repos/configs/vim/.vim;
+          source = "${dotfile}/configs/vim/.vim";
           target = "/home/jaziel/.vim";
         };
       vimrc = {
-          source = ~/repos/configs/vim/.vimrc;
+          source = "${dotfile}/configs/vim/.vimrc";
           target = "/home/jaziel/.vimrc";
        };
       tmux = {
-          source = ~/repos/configs/tmux/.tmux.conf;
+          source = "${dotfile}/configs/tmux/.tmux.conf";
           target = "/home/jaziel/.tmux.conf";
         };
       starship = {
-          source = ~/repos/configs/starship/.config/starship.toml;
+          source = "${dotfile}/configs/starship/.config/starship.toml";
           target = "/home/jaziel/.config/starship.toml";
         };
       lf = {
           recursive = true;
-          source = ~/repos/configs/lf/.config/lf;
+          source = "${dotfile}/configs/lf/.config/lf";
           target = "/home/jaziel/.config/lf";
         };
       alacritty = {
           recursive = true;
-          source = ~/repos/configs/alacritty/.config/alacritty;
+          source = "${dotfile}/configs/alacritty/.config/alacritty";
           target = "/home/jaziel/.config/alacritty";
         };
       btop = {
           recursive = true;
-          source = ~/repos/configs/btop/.config/btop;
+          source = "${dotfile}/configs/btop/.config/btop";
           target = "/home/jaziel/.config/btop";
         };
 #      .bashrc = {
-#          source = /home/jaziel/repos/configs/bash/.bashrc;
+#          source = /home/jaziel/repos/repos/configs/bash/.bashrc;
 #    };
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
