@@ -202,7 +202,7 @@ programs.git = {
 };
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
-  dotfiles = mkOutOfStoreSymlink /home/jaziel/repos/configs
+  dotfiles = mkOutOfStoreSymlink /home/jaziel/repos/configs;
   home.file = {
       vim = {
           recursive = true;
