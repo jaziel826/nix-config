@@ -40,7 +40,8 @@
   yubikey-manager
   kitty
   catppuccin-gtk
-  pgadmin4-desktopmode
+  masterpdfeditor4
+ # pgadmin4-desktopmode
   catppuccin-qt5ct
   gcc
   tmux
