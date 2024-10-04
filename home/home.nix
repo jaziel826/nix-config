@@ -81,7 +81,7 @@
   #yazi
   mullvad-browser
   stow 
-  libreoffice-qt6-fresh
+  #libreoffice-qt6-fresh
   protonvpn-cli
   protonvpn-gui
   yubikey-personalization
