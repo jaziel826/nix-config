@@ -45,7 +45,7 @@
   catppuccin-qt5ct
   gcc
   tmux
-  poppler
+  #poppler
   fastfetch
   jq
   fd
@@ -64,7 +64,7 @@
   lf
   fzf
   trash-cli
-  onlyoffice-bin
+  #onlyoffice-bin
   inkscape
   dogdns
   alacritty
@@ -81,7 +81,7 @@
   #yazi
   mullvad-browser
   stow 
-  #libreoffice-qt6-fresh
+  libreoffice
   protonvpn-cli
   protonvpn-gui
   yubikey-personalization
