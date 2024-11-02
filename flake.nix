@@ -11,7 +11,7 @@
     };
     auto-cpufreq = {
     url = "github:AdnanHodzic/auto-cpufreq";
-    inputs.nixpkgs.follows = "nixpkgs";
+    inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 #      impermanence.url = "github:nix-community/impermanence";
      home-manager = {
