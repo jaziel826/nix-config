@@ -9,10 +9,10 @@
     url = "github:Mic92/sops-nix";
     inputs.nixpkgs.follows = "nixpkgs-stable";
     };
-    auto-cpufreq = {
-    url = "github:AdnanHodzic/auto-cpufreq";
-    inputs.nixpkgs.follows = "nixpkgs-stable";
-    };
+    #auto-cpufreq = {
+    #url = "github:AdnanHodzic/auto-cpufreq";
+    #inputs.nixpkgs.follows = "nixpkgs-stable";
+    #};
 #      impermanence.url = "github:nix-community/impermanence";
      home-manager = {
        url = "github:nix-community/home-manager";
@@ -20,7 +20,7 @@
      };
   };
 
-  outputs = { self, nixpkgs, home-manager, auto-cpufreq, sops-nix,... }@inputs:
+  outputs = { self, nixpkgs, home-manager, sops-nix,... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -45,7 +45,7 @@
             ./nixos/configuration.nix
             ./modules
             #./sops.nix
-            auto-cpufreq.nixosModules.default
+            #auto-cpufreq.nixosModules.default
             sops-nix.nixosModules.sops
             # inputs.home-manager.nixosModules.default
             home-manager.nixosModules.home-manager
