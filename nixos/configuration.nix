@@ -282,6 +282,7 @@ services.avahi = {
   libsForQt5.breeze-plymouth
   libsForQt5.discover
   # corefonts
+  power-profiles-daemon
   nil
   starship
   distrobox
