@@ -34,7 +34,7 @@
   home.packages = with pkgs; [
   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   wget
-  #jetbrains-mono
+  jetbrains-mono
 #  nerdfonts
   catppuccin-kde
   yubikey-manager
@@ -86,7 +86,7 @@
   protonvpn-cli
   protonvpn-gui
   yubikey-personalization
-  #libsForQt5.plasma-browser-integration
+  libsForQt5.plasma-browser-integration
   # libsForQt5.kdeconnect-kde
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
