@@ -69,7 +69,7 @@
   inkscape
   dogdns
   alacritty
-  #mission-center
+  mission-center
 #   nodePackages_latest.npm
   firefox
   kate
@@ -86,7 +86,7 @@
   protonvpn-cli
   protonvpn-gui
   yubikey-personalization
-  libsForQt5.plasma-browser-integration
+ # libsForQt5.plasma-browser-integration
   # libsForQt5.kdeconnect-kde
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
