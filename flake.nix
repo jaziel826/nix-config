@@ -2,12 +2,12 @@
   description = "Nixos config flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/24.05"; #"github:nixos/nixpkgs/nixos-unstable";
     #nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/24.05";
+    #nixpkgs-stable.url = "github:nixos/nixpkgs/24.05";
     sops-nix = {
     url = "github:Mic92/sops-nix";
-    inputs.nixpkgs.follows = "nixpkgs-stable";
+    inputs.nixpkgs.follows = "nixpkgs";
     };
     #auto-cpufreq = {
     #url = "github:AdnanHodzic/auto-cpufreq";
@@ -40,8 +40,10 @@
         ThinkPad = lib.nixosSystem {
           inherit system;
           # specialArgs = {inherit inputs;};
+          #specialArgs = {inherit inputs;};
           modules = [ 
          # ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
+          #({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
             ./nixos/configuration.nix
             ./modules
             #./sops.nix
