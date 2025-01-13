@@ -46,6 +46,7 @@
   gcc
   tmux
   #poppler
+  megasync
   fastfetch
   jq
   fd
