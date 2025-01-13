@@ -266,7 +266,7 @@ services.avahi = {
     packages = with pkgs; [
       noto-fonts-emoji
       jetbrains-mono
-      nerdfonts.jetbrains-mono
+      nerd-fonts.jetbrains-mono
       corefonts
       vistafonts
     ];
@@ -280,7 +280,7 @@ services.avahi = {
  # hplip
   nixos-bgrt-plymouth
   libsForQt5.breeze-plymouth
-  libsForQt5.discover
+  kdePackages.discover
   # corefonts
   power-profiles-daemon
   nil
