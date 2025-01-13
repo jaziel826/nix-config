@@ -2,7 +2,7 @@
   description = "Nixos config flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/24.05"; #"github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/24.11"; #"github:nixos/nixpkgs/nixos-unstable";
     #nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     #nixpkgs-stable.url = "github:nixos/nixpkgs/24.05";
     sops-nix = {
