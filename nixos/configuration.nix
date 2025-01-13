@@ -266,7 +266,7 @@ services.avahi = {
     packages = with pkgs; [
       noto-fonts-emoji
       jetbrains-mono
-      nerdfonts
+      #nerdfonts.jetbrains-mono
       corefonts
       vistafonts
     ];
