@@ -124,7 +124,7 @@ services.avahi = {
     window = "hide"; # Show the window on startup (show, *hide*, only [window only])
     batteryIcons = "regular";
 
-  }
+  };
   # enable tailscale 
   # services.tailscale.enable= true;  
 
