@@ -307,6 +307,7 @@ services.avahi = {
   usbutils
   acpi
   adi1090x-plymouth-themes
+  logitech-udev-rules
   ];
 
   programs.kdeconnect.enable = true;
