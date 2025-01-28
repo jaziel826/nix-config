@@ -18,6 +18,7 @@
     ];
 
   # Bootloader.
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   # boot.plymouth.enable = true; 
@@ -32,7 +33,7 @@
       "quiet"
       "splash"
     ];
-  #sops.defaultSopsFile = ./secrets.yaml;
+  #sops.defaultSopsFile = ../secrets.yaml;
   #boot.initrd.luks.devices."luks-515df98e-91e6-4714-bc04-093adad99922".device = "/dev/disk/by-uuid/515df98e-91e6-4714-bc04-093adad99922";
   boot.initrd.luks.devices."luks-164cbc37-fe46-4be4-9059-f6c1b4743e89".device = "/dev/disk/by-uuid/164cbc37-fe46-4be4-9059-f6c1b4743e89";
   networking.hostName = "ThinkPad"; # Define your hostname.
@@ -117,7 +118,13 @@ services.avahi = {
   openFirewall = true;
 };
 
+  services.solaar = {
+    enable = true;
+    package = pkgs.solaar; # The package to use
+    window = "hide"; # Show the window on startup (show, *hide*, only [window only])
+    batteryIcons = "regular";
 
+  }
   # enable tailscale 
   # services.tailscale.enable= true;  
 
@@ -284,6 +291,7 @@ services.avahi = {
   # corefonts
   power-profiles-daemon
   nil
+  sops
   starship
   distrobox
 #  steam
