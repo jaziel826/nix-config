@@ -80,7 +80,7 @@
   btop
   brave
   #yazi
-  mullvad-browser
+  #mullvad-browser
   stow 
   libreoffice
   protonvpn-cli
