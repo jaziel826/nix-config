@@ -72,7 +72,7 @@
   mission-center
 #   nodePackages_latest.npm
   firefox
-  kate
+  kdePackages.kate
   localsend
   #corefonts
   #vistafonts
