@@ -122,7 +122,7 @@ services.avahi = {
     enable = true;
     package = pkgs.solaar; # The package to use
     window = "hide"; # Show the window on startup (show, *hide*, only [window only])
-    batteryIcons = "regular";
+    batteryIcons = "symbolic";
 
   };
   # enable tailscale 
@@ -163,6 +163,7 @@ services.avahi = {
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
+      kdePackages.xdg-desktop-portal-kde
       xdg-desktop-portal-gtk
     ];
   };
