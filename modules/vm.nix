@@ -44,5 +44,4 @@ home-manager.users.${username} = {
       };
     };
   };
-};
 }
