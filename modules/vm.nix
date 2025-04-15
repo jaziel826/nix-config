@@ -32,7 +32,7 @@ users.groups.libvirtd.members = ["jaziel"];
     win-spice
   ];
 
-virtualisation.spiceUSBRedirection.enable = true;
+#virtualisation.spiceUSBRedirection.enable = true;
 services.qemuGuest.enable = true;
 services.spice-vdagentd.enable = true;  # enable copy and paste between host and guest
 
