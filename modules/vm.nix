@@ -21,7 +21,7 @@ programs.virt-manager.enable = true;
 
 users.groups.libvirtd.members = ["jaziel"];
 
-virtualisation.libvirtd.enable = true;
+#virtualisation.libvirtd.enable = true;
 
   environment.systemPackages = with pkgs; [
     spice
