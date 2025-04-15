@@ -11,5 +11,6 @@
     # ./impermanence.nix
     ./tailscale.nix
     ./sops.nix
+    ./vm.nix
   ];
 }
