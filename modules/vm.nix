@@ -36,7 +36,7 @@ users.groups.libvirtd.members = ["jaziel"];
 services.qemuGuest.enable = true;
 services.spice-vdagentd.enable = true;  # enable copy and paste between host and guest
 
-home-manager.users.${username} = {
+home-manager.users.jaziel = {
     dconf.settings = {
       "org/virt-manager/virt-manager/connections" = {
         autoconnect = [ "qemu:///system" ];
