@@ -55,7 +55,7 @@
   file
   bat
   starship 
-  #steam
+  steam
   thunderbird
   traceroute
   tmux
