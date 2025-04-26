@@ -83,8 +83,8 @@
   #mullvad-browser
   stow 
   libreoffice
-  protonvpn-cli
-  protonvpn-gui
+  #protonvpn-cli
+  #protonvpn-gui
   proton-pass
   yubikey-personalization
  # libsForQt5.plasma-browser-integration
