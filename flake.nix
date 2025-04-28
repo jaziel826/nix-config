@@ -24,9 +24,10 @@
        url = "github:nix-community/home-manager";
        inputs.nixpkgs.follows = "nixpkgs";
      };
+     lobster.url = "github:justchokingaround/lobster";
   };
 
-  outputs = { self, nixpkgs, home-manager, sops-nix, solaar,... }@inputs:
+  outputs = { self, nixpkgs, home-manager, sops-nix, solaar, lobster,... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -55,6 +56,7 @@
             sops-nix.nixosModules.sops
             # inputs.home-manager.nixosModules.default
             solaar.nixosModules.default
+            lobster.nixosModules.default
             home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
