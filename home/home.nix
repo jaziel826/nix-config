@@ -64,6 +64,7 @@
   gparted
   lf
   fzf
+  mpv
   trash-cli
   #onlyoffice-bin
   inkscape
