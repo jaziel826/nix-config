@@ -56,7 +56,6 @@
             sops-nix.nixosModules.sops
             # inputs.home-manager.nixosModules.default
             solaar.nixosModules.default
-            lobster.nixosModules.default
             home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

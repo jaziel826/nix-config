@@ -5,7 +5,7 @@
   # manage.
   home.username = "jaziel";
   home.homeDirectory = "/home/jaziel";
-  nixpkgs.config.allowUnfreePredicate = _: true;
+  #nixpkgs.config.allowUnfreePredicate = _: true;
   #nixpkgs-unstable.config.allowUnfree = true;
 
 
@@ -71,6 +71,7 @@
   dogdns
   alacritty
   mission-center
+  ansible
 #   nodePackages_latest.npm
   firefox
   kdePackages.kate
@@ -78,6 +79,7 @@
   #corefonts
   #vistafonts
   neovim
+  lobster
   btop
   brave
   #yazi
