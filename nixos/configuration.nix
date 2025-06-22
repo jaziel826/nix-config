@@ -335,7 +335,7 @@ services.avahi = {
   networking.firewall.allowedUDPPorts = [ 53317 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
-  virtualisation.waydroid.enable = true;
+  #virtualisation.waydroid.enable = true;
   virtualisation = {
     podman = {
       enable = true;
