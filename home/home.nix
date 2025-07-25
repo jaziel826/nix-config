@@ -195,8 +195,8 @@ programs.yazi = {
 #      }
 #    ];
 #};
-};
-};
+#};
+#};
 
 programs.git = {
   enable = true;
