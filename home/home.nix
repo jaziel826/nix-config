@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, winappsPkg, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -281,8 +281,16 @@ programs.git = {
 
 };
 
+
+
+  home.file.".local/bin/winapps".source = "${winappsPkg}/bin/winapps";
+  #home.file.".local/share/winapps".force = true;
+
+
   home.sessionPath = [
     "$XDG_BIN_HOME"
+    "$HOME/.local/bin"
+    "/usr/local/bin"
 ];
   # reload system units when switch
   systemd.user.startServices = "sd-switch";

@@ -215,7 +215,7 @@ services.avahi = {
   users.users.jaziel = {
     isNormalUser = true;
     description = "Jaziel";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "kvm" "podman" "docker" ];
     #packages = with pkgs; [
      #firefox
 #       kate
@@ -292,7 +292,7 @@ services.avahi = {
   wget
  # hplip
   nixos-bgrt-plymouth
-  libsForQt5.breeze-plymouth
+  kdePackages.breeze-plymouth
   kdePackages.discover
   # corefonts
   power-profiles-daemon
@@ -314,6 +314,9 @@ services.avahi = {
   acpi
   adi1090x-plymouth-themes
   logitech-udev-rules
+  podman-compose
+  docker-compose
+  freerdp
   ];
 
   programs.kdeconnect.enable = true;
@@ -331,8 +334,8 @@ services.avahi = {
   services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 53317 ];
-  networking.firewall.allowedUDPPorts = [ 53317 ];
+  networking.firewall.allowedTCPPorts = [ 53317 3389 ];
+  networking.firewall.allowedUDPPorts = [ 53317 3389 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
   #virtualisation.waydroid.enable = true;
@@ -341,11 +344,12 @@ services.avahi = {
       enable = true;
 
       # Create a `docker` alias for podman, to use it as a drop-in replacement
-      dockerCompat = true;
+      #dockerCompat = true;
 
       # Required for containers under podman-compose to be able to talk to each other.
       defaultNetwork.settings.dns_enabled = true;
     };
+    docker.enable = true;
   };
 
   # This value determines the NixOS release from which the default

@@ -25,13 +25,19 @@
        inputs.nixpkgs.follows = "nixpkgs";
      };
      lobster.url = "github:justchokingaround/lobster";
+
+     winapps = {
+       url = "github:winapps-org/winapps";
+       inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, sops-nix, solaar, lobster,... }@inputs:
+  outputs = { self, nixpkgs, home-manager, sops-nix, solaar, lobster, winapps,... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      winappsPkg = winapps.packages.${system}.winapps;
       #overlay-unstable = final: prev: {
       #unstable = nixpkgs-unstable.legacyPackages.${prev.system};
         # use this variant if unfree packages are needed:
@@ -62,10 +68,20 @@
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
             home-manager.users.jaziel = import ./home/home.nix;
+            home-manager.extraSpecialArgs = {
+            inherit winappsPkg;
+          };
             #sops-nix.nixosModules.sops;
             # Optionally, use home-manager.extraSpecialArgs to pass
             # arguments to home.nix
           }
+
+          ({ config, pkgs, system ? pkgs.system, ... }: {
+            environment.systemPackages = [
+              winapps.packages."${pkgs.system}".winapps
+              winapps.packages."${pkgs.system}".winapps-launcher # optional
+            ];
+          })
           ];
         };
     };
