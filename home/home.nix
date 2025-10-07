@@ -89,6 +89,7 @@
   #protonvpn-cli
   #protonvpn-gui
   proton-pass
+  zellij
   yubikey-personalization
  # libsForQt5.plasma-browser-integration
   # libsForQt5.kdeconnect-kde
@@ -158,8 +159,10 @@ notify_on_finish() {
     # Exit with the same status as the last command
     return $status
 }
+ZELLIJ_CONFIG_FILE = "/home/jaziel/repos/configs/zellij/config/config.kdl"
 
   eval "$(zoxide init bash)"
+  eval "$(zellij setup --generate-auto-start bash)"
     '';
   };
 
