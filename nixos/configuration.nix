@@ -80,10 +80,11 @@
       flake-registry = "";
       # Workaround for https://github.com/NixOS/nix/issues/9574
       nix-path = config.nix.nixPath;
+
+      download-buffer-size = 524288000;
     };
     # Opinionated: disable channels
     channel.enable = false;
-
     # Opinionated: make flake registry and nix path match flake inputs
     #registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
     #nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
