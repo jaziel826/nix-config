@@ -79,7 +79,7 @@
   #corefonts
   #vistafonts
   neovim
-  lobster
+ ## lobster
   btop
   brave
   #yazi
