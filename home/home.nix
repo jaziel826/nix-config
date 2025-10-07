@@ -85,7 +85,7 @@
   #yazi
   #mullvad-browser
   stow 
-  libreoffice
+  #libreoffice
   #protonvpn-cli
   #protonvpn-gui
   proton-pass
