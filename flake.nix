@@ -2,12 +2,12 @@
   description = "Nixos config flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05"; #"github:nixos/nixpkgs/nixos-unstable";
     #nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
     sops-nix = {
     url = "github:Mic92/sops-nix";
-    #inputs.nixpkgs.follows = "nixpkgs";
+    inputs.nixpkgs.follows = "nixpkgs-stable";
     };
     solaar = {
       url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
@@ -32,7 +32,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, sops-nix, solaar, lobster, winapps,... }@inputs:
+  outputs = { self, nixpkgs,nixpkgs-stable, home-manager, sops-nix, solaar, lobster, winapps,... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
