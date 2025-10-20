@@ -151,8 +151,13 @@ services.avahi = {
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
+  #services.displayManager.sddm.enable = true;
+  #services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.cosmic-greeter.enable = true;
+ # services.displayManager.lemurs.settings = {
+  #  system_shell = "/bin/bash";
+  #};
+
   services.desktopManager.plasma6.enable = true;
   services.gvfs.enable = true;
   services.udisks2.enable = true;
