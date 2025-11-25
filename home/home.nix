@@ -161,7 +161,6 @@ notify_on_finish() {
 }
 
   eval "$(zoxide init bash)"
-  eval "$(zellij setup --generate-auto-start bash)"
     '';
   };
 
