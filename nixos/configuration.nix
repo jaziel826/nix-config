@@ -288,7 +288,7 @@ services.avahi = {
       jetbrains-mono
       nerd-fonts.jetbrains-mono
       corefonts
-      vistafonts
+      vista-fonts
     ];
   };
 
