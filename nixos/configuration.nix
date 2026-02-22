@@ -151,9 +151,9 @@ services.avahi = {
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  #services.displayManager.sddm.enable = true;
-  #services.displayManager.sddm.wayland.enable = true;
-  services.displayManager.cosmic-greeter.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+  #services.displayManager.cosmic-greeter.enable = true;
  # services.displayManager.lemurs.settings = {
   #  system_shell = "/bin/bash";
   #};
@@ -193,6 +193,9 @@ services.avahi = {
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+
+  #fwupd
+  services.fwupd.enable = true;
 
   # enable Bluetooth
   hardware.bluetooth.enable = true;
@@ -256,41 +259,20 @@ services.avahi = {
   # enable Flatpak
   services.flatpak.enable = true;
  # fonts.fontDir.enable = true;
-  system.fsPackages = [ pkgs.bindfs ];
-  fileSystems = let
-    mkRoSymBind = path: {
-      device = path;
-      fsType = "fuse.bindfs";
-      options = [ "ro" "resolve-symlinks" "x-gvfs-hide" ];
-    };
-    aggregatedIcons = pkgs.buildEnv {
-      name = "system-icons";
-      paths = with pkgs; [
-        kdePackages.breeze  # for plasma
-  #      gnome.gnome-themes-extra
-      ];
-      pathsToLink = [ "/share/icons" ];
-    };
-    aggregatedFonts = pkgs.buildEnv {
-      name = "system-fonts";
-      paths = config.fonts.packages;
-      pathsToLink = [ "/share/fonts" ];
-    };
-  in {
-    "/usr/share/icons" = mkRoSymBind "${aggregatedIcons}/share/icons";
-    "/usr/local/share/fonts" = mkRoSymBind "${aggregatedFonts}/share/fonts";
-  };
+fonts = {
+  # Create /run/current-system/sw/share/X11-fontdir and /usr/share/fonts
+  fontDir.enable = true;
 
-  fonts = {
-    fontDir.enable = true;
-    packages = with pkgs; [
-      noto-fonts-color-emoji
-      jetbrains-mono
-      nerd-fonts.jetbrains-mono
-      corefonts
-      vista-fonts
-    ];
-  };
+  # Avoid legacy X11 bitmap fonts that cause collisions
+  #enableDefaultFonts = false;
+
+  # Your clean set of fonts
+  packages = with pkgs; [
+    jetbrains-mono
+    nerd-fonts.jetbrains-mono
+    vista-fonts
+  ];
+};
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
