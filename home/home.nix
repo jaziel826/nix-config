@@ -68,7 +68,7 @@
   trash-cli
   #onlyoffice-bin
   inkscape
-  dogdns
+  doggo
   alacritty
   mission-center
   ansible
@@ -199,10 +199,10 @@ programs.yazi = {
 #};
 #};
 
-programs.git = {
+programs.git= {
   enable = true;
-  userName = "Jaziel Amadiz";
-  userEmail = "jaziel.amadiz@pm.me";
+  settings.user.name = "Jaziel Amadiz";
+  settings.user.email = "jaziel.amadiz@pm.me";
 };
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
