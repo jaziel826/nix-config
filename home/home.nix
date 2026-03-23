@@ -39,10 +39,10 @@
   catppuccin-kde
   yubikey-manager
   kitty
-  catppuccin-gtk
+  #catppuccin-gtk
   masterpdfeditor4
  # pgadmin4-desktopmode
-  catppuccin-qt5ct
+  #catppuccin-qt5ct
   gcc
   tmux
   #poppler
@@ -70,7 +70,7 @@
   inkscape
   doggo
   alacritty
-  mission-center
+  #mission-center
   ansible
 #   nodePackages_latest.npm
   firefox
