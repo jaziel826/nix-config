@@ -2,9 +2,9 @@
   description = "Nixos config flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    #nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+    #nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
     sops-nix = {
     url = "github:Mic92/sops-nix";
     inputs.nixpkgs.follows = "nixpkgs-stable";
@@ -24,7 +24,7 @@
        url = "github:nix-community/home-manager";
        inputs.nixpkgs.follows = "nixpkgs";
      };
-     lobster.url = "github:justchokingaround/lobster";
+     #lobster.url = "github:justchokingaround/lobster";
 
      winapps = {
        url = "github:winapps-org/winapps";
@@ -32,7 +32,7 @@
     };
   };
 
-  outputs = { self, nixpkgs,nixpkgs-stable, home-manager, sops-nix, solaar, lobster, winapps,... }@inputs:
+  outputs = { self, nixpkgs,nixpkgs-stable, home-manager, sops-nix, solaar, winapps,... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -79,7 +79,7 @@
           ({ config, pkgs, system ? pkgs.system, ... }: {
             environment.systemPackages = [
               winapps.packages."${pkgs.system}".winapps
-              winapps.packages."${pkgs.system}".winapps-launcher # optional
+              #winapps.packages."${pkgs.system}".winapps-launcher # optional
             ];
           })
           ];
