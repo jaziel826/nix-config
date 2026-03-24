@@ -15,10 +15,10 @@
       #url = "github:Svenum/Solaar-Flake/main"; # Uncomment line for latest unstable version
       inputs.nixpkgs.follows = "nixpkgs";
       };
-    #auto-cpufreq = {
-    #url = "github:AdnanHodzic/auto-cpufreq";
-    #inputs.nixpkgs.follows = "nixpkgs-stable";
-    #};
+    auto-cpufreq = {
+    url = "github:AdnanHodzic/auto-cpufreq";
+    inputs.nixpkgs.follows = "nixpkgs";
+    };
 #      impermanence.url = "github:nix-community/impermanence";
      home-manager = {
        url = "github:nix-community/home-manager";
@@ -32,7 +32,7 @@
     };
   };
 
-  outputs = { self, nixpkgs,nixpkgs-stable, home-manager, sops-nix, solaar, winapps,... }@inputs:
+  outputs = { self, nixpkgs,nixpkgs-stable, home-manager, sops-nix, solaar, auto-cpufreq, winapps,... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -58,7 +58,7 @@
             ./nixos/configuration.nix
             ./modules
             #./sops.nix
-            #auto-cpufreq.nixosModules.default
+            auto-cpufreq.nixosModules.default
             sops-nix.nixosModules.sops
             # inputs.home-manager.nixosModules.default
             solaar.nixosModules.default

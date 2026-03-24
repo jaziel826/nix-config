@@ -90,21 +90,21 @@
     #nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
   };
 # set uo auto-cpufreq 
-  # ---Snip---
-  #programs.auto-cpufreq.enable = true;
-   # optionally, you can configure your auto-cpufreq settings, if you have any
-  #programs.auto-cpufreq.settings = {
-   #charger = {
-   #  governor = "performance";
-   #  turbo = "auto";
-  # };
+ # ---Snip---
+    programs.auto-cpufreq.enable = true;
+    # optionally, you can configure your auto-cpufreq settings, if you have any
+    programs.auto-cpufreq.settings = {
+    charger = {
+      governor = "performance";
+      turbo = "auto";
+    };
 
-  # battery = {
-   #  governor = "powersave";
-   #  turbo = "auto";
-   #};
- #};
-   # ---Snip---
+    battery = {
+      governor = "powersave";
+      turbo = "auto";
+    };
+  };
+    # ---Snip---
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
