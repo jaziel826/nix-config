@@ -105,7 +105,7 @@
     };
   };
     # ---Snip---
-
+ services.power-profiles-daemon.enable = false;
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -151,9 +151,9 @@ services.avahi = {
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  #services.displayManager.sddm.enable = true;
-  services.displayManager.plasma-login-manager.enable = true;
-  #services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm.enable = true;
+  #services.displayManager.plasma-login-manager.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
   #services.displayManager.cosmic-greeter.enable = true;
  # services.displayManager.lemurs.settings = {
   #  system_shell = "/bin/bash";
@@ -163,7 +163,7 @@ services.avahi = {
   services.gvfs.enable = true;
   services.udisks2.enable = true;
   services.pcscd.enable = true;
-  services.xserver.displayManager.defaultSession = "plasmawayland";
+  services.displayManager.defaultSession = "plasma";
   #services.xserver.displayManager.gdm.enable = true;
   #services.xserver.desktopManager.gnome.enable = true;
   # xdg.portal.enable = true;
@@ -251,12 +251,12 @@ services.avahi = {
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  programs.steam = {
-  enable = true;
-  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-  localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
-};
+#   programs.steam = {
+#   enable = true;
+#   remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+#   dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+#   localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+# };
   # enable Flatpak
   services.flatpak.enable = true;
  # fonts.fontDir.enable = true;
@@ -285,7 +285,7 @@ fonts = {
   kdePackages.breeze-plymouth
   kdePackages.discover
   # corefonts
-  power-profiles-daemon
+  #power-profiles-daemon
   nil
   sops
   starship
@@ -308,7 +308,6 @@ fonts = {
   docker-compose
   freerdp
   ];
-
   programs.kdeconnect.enable = true;
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
