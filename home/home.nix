@@ -166,14 +166,17 @@ notify_on_finish() {
 
 xdg.userDirs = {
 	enable = true;
+	setSessionVariables = true;
 	createDirectories = true;
 	desktop = "$HOME/desktop";
 	download = "$HOME/downloads";
   documents = "$HOME/documents";
+
 	
 	};
 programs.yazi = {
   enable = true;
+  shellWrapperName = "yy";
   };
 #  keymap = {
 #    prepend.manager.keymap = [
@@ -203,6 +206,7 @@ programs.git= {
   enable = true;
   settings.user.name = "Jaziel Amadiz";
   settings.user.email = "jaziel.amadiz@pm.me";
+  signing.format = null;
 };
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
