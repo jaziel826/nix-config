@@ -165,7 +165,10 @@ services.avahi = {
   services.pcscd.enable = true;
   services.displayManager.defaultSession = "plasma";
   #services.xserver.displayManager.gdm.enable = true;
-  #services.xserver.desktopManager.gnome.enable = true;
+#   services.desktopManager.gnome.enable = true;
+#   environment.gnome.excludePackages = with pkgs; [
+#     seahorse
+#   ];
   # xdg.portal.enable = true;
   # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-kde ];
   xdg.portal = {
