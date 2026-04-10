@@ -309,7 +309,6 @@ fonts = {
   logitech-udev-rules
   podman-compose
   docker-compose
-  freerdp
   ];
   programs.kdeconnect.enable = true;
   # Some programs need SUID wrappers, can be configured further or are
