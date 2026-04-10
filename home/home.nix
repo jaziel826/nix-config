@@ -31,10 +31,7 @@
   #systemd.service.kde-baloo.enable = false;
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs-unstable; [
-  freerdp
-  ];
-  home.packages = with pkgs; [
+  home.packages = (with pkgs; [
   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   wget
   jetbrains-mono
@@ -112,7 +109,13 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-  ];
+  ])
+
+  ++
+
+  (with pkgs-unstable; [
+  freerdp
+  ]);
 fonts.fontconfig.enable = true;
 
 programs.bash = {

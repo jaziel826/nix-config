@@ -32,29 +32,29 @@
     };
   };
 
-  outputs = { self, nixpkgs,nixpkgs-stable, home-manager, sops-nix, solaar, auto-cpufreq, winapps,... }@inputs:
+  outputs = { self, nixpkgs,nixpkgs-unstable, home-manager, sops-nix, solaar, auto-cpufreq, winapps,... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       winappsPkg = winapps.packages.${system}.winapps;
-      #overlay-unstable = final: prev: {
-      #unstable = nixpkgs-unstable.legacyPackages.${prev.system};
+      overlay-unstable = final: prev: {
+      pkgs-unstable = nixpkgs-unstable.legacyPackages.${prev.system};
         # use this variant if unfree packages are needed:
-       #  unstable = import nixpkgs-unstable {
+         #unstable = import nixpkgs-unstable {
         #   inherit system;
        #    config.allowUnfree = true;
        #  };
 
-      #};
+      };
     in {
     
       nixosConfigurations = {
         ThinkPad = lib.nixosSystem {
           inherit system;
-          # specialArgs = {inherit inputs;};
+          specialArgs = {inherit inputs;};
           modules = [ 
-         # ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
+          ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
             ./nixos/configuration.nix
             ./modules
             #./sops.nix
