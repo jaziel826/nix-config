@@ -1,4 +1,4 @@
-{ config, pkgs, winappsPkg, ... }:
+{ config, pkgs, pkgs-unstabel, winappsPkg, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should

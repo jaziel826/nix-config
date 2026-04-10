@@ -70,6 +70,7 @@
             home-manager.users.jaziel = import ./home/home.nix;
             home-manager.extraSpecialArgs = {
             inherit winappsPkg;
+            pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
           };
             #sops-nix.nixosModules.sops;
             # Optionally, use home-manager.extraSpecialArgs to pass
