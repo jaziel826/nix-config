@@ -155,6 +155,10 @@ services.avahi = {
   #services.displayManager.plasma-login-manager.enable = true;
   services.displayManager.sddm.wayland.enable = true;
   #services.displayManager.cosmic-greeter.enable = true;
+  services.displayManager = {
+	autoLogin.enable = true;
+	autoLogin.user = "jaziel";
+};
  # services.displayManager.lemurs.settings = {
   #  system_shell = "/bin/bash";
   #};
