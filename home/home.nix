@@ -145,24 +145,10 @@ function yy() {
 	rm -f -- "$tmp"
 }
 notify_on_finish() {
-    local ntfy_url="https://ntfy.digecloud.work/Monitor"  # Replace YOUR_TOPIC with your ntfy.sh topic
-
-    # Capture the exit status of the last command
     local status=$?
-
-    # Determine the notification title and message based on the exit status
-    if [ $status -eq 0 ]; then
-        local title="Success"
-        local message="Command succeeded: $(history 1 | sed 's/^ *[0-9]* *//')"
-    else
-        local title="Error"
-        local message="Command failed with status $status: $(history 1 | sed 's/^ *[0-9]* *//')"
-    fi
-
-    # Send the notification using ntfy.sh
-    curl -s -X POST "$ntfy_url" -d "{\"title\":\"$title\",\"message\":\"$message\"}"
-
-    # Exit with the same status as the last command
+    local cmd
+    cmd=$(history 1 | sed 's/^ *[0-9]* *//')
+    notify "$status" "$cmd"
     return $status
 }
 
