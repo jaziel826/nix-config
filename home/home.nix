@@ -39,7 +39,7 @@
   catppuccin-kde
   yubikey-manager
   kitty
-  #catppuccin-gtk
+  catppuccin-gtk
   masterpdfeditor4
  # pgadmin4-desktopmode
   #catppuccin-qt5ct
