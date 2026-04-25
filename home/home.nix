@@ -39,6 +39,7 @@
   catppuccin-kde
   yubikey-manager
   kitty
+  kdePackages.breeze-gtk
   catppuccin-gtk
   masterpdfeditor4
  # pgadmin4-desktopmode
