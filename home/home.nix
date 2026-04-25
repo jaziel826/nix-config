@@ -89,7 +89,6 @@
   #protonvpn-cli
   #protonvpn-gui
   proton-pass
-  zellij
   yubikey-personalization
  # libsForQt5.plasma-browser-integration
   # libsForQt5.kdeconnect-kde
@@ -115,6 +114,7 @@
 
   (with pkgs-unstable; [
   freerdp
+  zellij
   ]);
 fonts.fontconfig.enable = true;
 
