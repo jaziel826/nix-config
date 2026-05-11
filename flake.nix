@@ -16,14 +16,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
       };
     auto-cpufreq = {
-    url = "github:AdnanHodzic/auto-cpufreq";
-    inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:AdnanHodzic/auto-cpufreq";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 #      impermanence.url = "github:nix-community/impermanence";
-     home-manager = {
-       url = "github:nix-community/home-manager";
-       inputs.nixpkgs.follows = "nixpkgs";
-     };
+    home-manager = {
+      url = "github:nix-community/home-manager/release-25.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+};
      #lobster.url = "github:justchokingaround/lobster";
 
      winapps = {
