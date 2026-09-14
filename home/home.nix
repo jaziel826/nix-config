@@ -116,6 +116,7 @@
   (with pkgs-unstable; [
   freerdp
   zellij
+  solaar
   ]);
 fonts.fontconfig.enable = true;
 
