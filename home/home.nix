@@ -160,7 +160,7 @@ notify_on_finish() {
 
 xdg.userDirs = {
 	enable = true;
-	#setSessionVariables = true;
+	setSessionVariables = true;
 	createDirectories = true;
 	desktop = "$HOME/desktop";
 	download = "$HOME/downloads";
