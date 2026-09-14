@@ -32,7 +32,7 @@
     };
   };
 
-  outputs = { self, nixpkgs,nixpkgs-unstable, home-manager, sops-nix, solaar, auto-cpufreq, winapps,... }@inputs:
+  outputs = { self, nixpkgs,nixpkgs-unstable, home-manager, sops-nix, auto-cpufreq, winapps,... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -61,7 +61,7 @@
             auto-cpufreq.nixosModules.default
             sops-nix.nixosModules.sops
             # inputs.home-manager.nixosModules.default
-            solaar.nixosModules.default
+            #solaar.nixosModules.default
             home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
