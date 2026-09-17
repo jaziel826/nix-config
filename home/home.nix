@@ -82,6 +82,7 @@
   neovim
  ## lobster
   btop
+  vorta
   brave
   #yazi
   #mullvad-browser
