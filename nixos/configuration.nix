@@ -119,13 +119,13 @@ services.avahi = {
   openFirewall = true;
 };
 
-  services.solaar = {
-    enable = true;
-    package = pkgs.solaar; # The package to use
-    window = "hide"; # Show the window on startup (show, *hide*, only [window only])
-    batteryIcons = "symbolic";
-
-  };
+#   services.solaar = {
+#     enable = true;
+#     package = pkgs.solaar; # The package to use
+#     window = "hide"; # Show the window on startup (show, *hide*, only [window only])
+#     batteryIcons = "symbolic";
+#
+#   };
   # enable tailscale 
   # services.tailscale.enable= true;  
 
